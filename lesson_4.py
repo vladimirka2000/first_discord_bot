@@ -27,10 +27,21 @@ async def all_math(ctx, x:int, y:int):
     await ctx.send(f"Деление {x / y}")
 
 @bot.command()
+async def procent(ctx, z:int, w:int):
+    await ctx.send(f"Процент-от-суммы {z / 100 * w}")
+    await ctx.send(f"Процент-от-выражения {z / w *100}")
+    await ctx.send(f"Процент-от-произведения {z * w / 100}")
+
+
+@bot.command()
 async def repeat(ctx, times: int, content='repeating...'):
     """Repeats a message multiple times."""
     for i in range(times):
         await ctx.send(content)
+
+
+
+bot.run(token())
 
 
 
